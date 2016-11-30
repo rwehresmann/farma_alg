@@ -1,4 +1,4 @@
-require "spec_helper"
+require "rails_helper"
 
 describe LosController do
   describe "routing" do

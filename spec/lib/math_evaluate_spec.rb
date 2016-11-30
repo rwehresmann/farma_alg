@@ -1,3 +1,4 @@
+require 'rails_helper'
 require File.expand_path("../../../lib/math/math_evaluate", __FILE__)
 
 describe "math evalute" do

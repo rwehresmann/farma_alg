@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 describe "Logout" do
 
@@ -20,4 +20,3 @@ describe "Logout" do
   end
 
 end
-
