@@ -52,6 +52,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'pry-rails'
   gem 'thin'
+  gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~> 4.0'
   gem 'database_cleaner', '~> 1.0'
   gem 'capybara', '~> 2.0'
