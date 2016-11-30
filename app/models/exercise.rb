@@ -6,18 +6,21 @@ class Exercise
   field :content, type: String
   field :available, type: Boolean, default: false
   field :position, type: Integer
+  # Points to receive after answer correctly the exercise.
+  field :points, type: Integer, default: 10
 
   default_scope desc(:position)
   #default_scope order_by([:position, :desc])
 
   before_create :set_position
 
-  attr_accessible :id, :title, :content, :available, :questions_attributes
+  attr_accessible :id, :title, :content, :available, :questions_attributes, :category_id
 
   validates_presence_of :title, :content
   validates :available, :inclusion => {:in => [true, false]}
 
   belongs_to :lo
+  belongs_to :category
 
   has_many :questions, dependent: :delete
 
