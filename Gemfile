@@ -52,10 +52,10 @@ group :development, :test do
   gem 'awesome_print'
   gem 'pry-rails'
   gem 'thin'
-  gem 'rspec-rails', '~> 2.0'
-  gem 'capybara'
+  gem 'factory_girl_rails', '~> 4.0'
+  gem 'database_cleaner', '~> 1.0'
+  gem 'capybara', '~> 2.0'
   gem 'launchy'
-  gem 'database_cleaner'
   gem 'growl'
   gem 'faker'
   gem 'capistrano-git-copy', require: false
@@ -69,7 +69,6 @@ group :test do
   gem 'spork', '> 0.9.0.rc'
   gem 'guard-rspec'
   gem 'guard-spork'
-  gem 'factory_girl_rails',  "~> 4.2.1"
 end
 
 gem 'bcrypt-ruby', '~> 3.0.0'

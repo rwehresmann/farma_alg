@@ -257,21 +257,10 @@ GEM
       rspec-core (~> 2.99.0)
       rspec-expectations (~> 2.99.0)
       rspec-mocks (~> 2.99.0)
-    rspec-collection_matchers (1.0.0)
-      rspec-expectations (>= 2.99.0.beta1)
     rspec-core (2.99.1)
     rspec-expectations (2.99.1)
       diff-lcs (>= 1.1.3, < 2.0)
     rspec-mocks (2.99.1)
-    rspec-rails (2.99.0)
-      actionpack (>= 3.0)
-      activemodel (>= 3.0)
-      activesupport (>= 3.0)
-      railties (>= 3.0)
-      rspec-collection_matchers
-      rspec-core (~> 2.99.0)
-      rspec-expectations (~> 2.99.0)
-      rspec-mocks (~> 2.99.0)
     sass (3.3.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -337,15 +326,15 @@ DEPENDENCIES
   capistrano-git-copy
   capistrano-rails (~> 1.1)
   capistrano-rvm
-  capybara
+  capybara (~> 2.0)
   ckeditor (~> 4.0.4)
   coffee-rails (~> 3.2.1)
-  database_cleaner
+  database_cleaner (~> 1.0)
   debugger
   delayed_job_mongoid
   devise (= 2.2.3)
   execjs
-  factory_girl_rails (~> 4.2.1)
+  factory_girl_rails (~> 4.0)
   faker
   font-awesome-sass-rails
   growl
@@ -366,7 +355,6 @@ DEPENDENCIES
   rabl (= 0.8.6)
   rails (= 3.2.19)
   redcarpet
-  rspec-rails (~> 2.0)
   sass-rails (~> 3.2.5)
   simple_form
   spork (> 0.9.0.rc)
@@ -378,3 +366,6 @@ DEPENDENCIES
   uglifier (>= 1.0.3)
   whenever
   yajl-ruby
+
+BUNDLED WITH
+   1.13.6
