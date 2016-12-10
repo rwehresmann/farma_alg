@@ -1,0 +1,18 @@
+development:
+  sessions:
+    default:
+      database: farma-alg
+      hosts:
+        - localhost:27017
+      options:
+        consistency: :strong
+test:
+  sessions:
+    default:
+      database: farma-alg-test
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
