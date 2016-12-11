@@ -44,7 +44,7 @@ RSpec.configure do |config|
   # config.filter_gems_from_backtrace("gem name")
 
   # Enable "should" sintax to remove deprecation warning.
-  config.expect_with(:rspec) { |c| c.syntax = :should }
+  # config.expect_with(:rspec) { |c| c.syntax = :should }
 
   # Disable rspec implicit wrapping of tests in a database transaction.
   config.use_transactional_fixtures = false
