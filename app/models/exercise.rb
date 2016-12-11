@@ -2,12 +2,16 @@ class Exercise
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  VALID_DEPENDENCIES = [:or, :and]
+
   field :title, type: String
   field :content, type: String
   field :available, type: Boolean, default: false
   field :position, type: Integer
-  # Points to receive after answer correctly the exercise.
-  field :points, type: Integer, default: 10
+  # Score to receive after answer correctly the exercise.
+  field :score, type: Integer, default: 10
+  # Dependencies are a hash with two keys: :or and :and.
+  field :dependencies, type: Hash, default: {}
 
   default_scope desc(:position)
   #default_scope order_by([:position, :desc])
@@ -16,8 +20,9 @@ class Exercise
 
   attr_accessible :id, :title, :content, :available, :questions_attributes, :category_id
 
-  validates_presence_of :title, :content
+  validates_presence_of :title, :content, :score
   validates :available, :inclusion => {:in => [true, false]}
+  validate :validate_dependencies
 
   belongs_to :lo
   belongs_to :category
@@ -36,7 +41,18 @@ class Exercise
   end
 
 private
+
   def set_position
     self.position = Time.now.to_i
+  end
+
+  def validate_dependencies
+    if dependencies.keys - VALID_DEPENDENCIES != []
+      errors.add(:category, "Invalid dependencie key! Note that only #{format_to_plain(VALID_DEPENDENCIES)} are allowed.")
+    end
+  end
+
+  def format_to_plain(array)
+    array.map{ |i| i }.join(", ")
   end
 end
