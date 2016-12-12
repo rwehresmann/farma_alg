@@ -18,7 +18,7 @@ class Exercise
 
   before_create :set_position
 
-  attr_accessible :id, :title, :content, :available, :questions_attributes, :category_id
+  attr_accessible :id, :title, :content, :available, :questions_attributes, :category_id, :score
 
   validates_presence_of :title, :content, :score
   validates :available, :inclusion => {:in => [true, false]}
