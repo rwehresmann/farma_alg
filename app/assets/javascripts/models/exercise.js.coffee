@@ -21,7 +21,8 @@ class Carrie.Models.Exercise extends Backbone.RelationalModel
 
   toJSON: ->
     id: @get('id')
-    title: @get('title')
+    lo_name: @get('lo').get('name')
+    lo_exercises: @get('lo').get('exercises')
     content: @get('content')
     available: @get('available')
     score: @get('score')

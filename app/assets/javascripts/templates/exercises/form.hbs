@@ -1,8 +1,8 @@
 <header class='page-header' >
   {{#if id }}
-    <h4>Editar exercício do OA {{lo.name}}</h4>
+    <h4>Editar exercício do OA {{lo_name}}</h4>
   {{else}}
-    <h4>Nova exercício para o OA {{lo.name}}</h4>
+    <h4>Nova exercício para o OA {{lo_name}}</h4>
   {{/if}}
 </header>
 <form id="exercise-form" class="form-vertical" novalidate>
@@ -29,6 +29,30 @@
       <div class="controls">
         <input type="text" name="score" required="required"/>
       </div>
+    </div>
+
+    <a href="#or" data-toggle="collapse">
+      <i class="icon-plus-sign"></i>
+      Adicionar restrição <b>OR</b>
+    </a>
+
+    <div id="or" class="collapse">
+      {{#each lo_exercises}}
+        <ul>
+          <tr>
+              <td>{{title}}</td>
+            </tr>
+        </ul>
+        {{/each}}
+    </div>
+
+    <a href="#and" data-toggle="collapse">
+      <i class="icon-plus-sign"></i>
+      Adicionar restrição <b>AND</b>
+    </a>
+
+    <div id="and" class="collapse">
+      Lorem ipsum dolor text....
     </div>
 
     <div class="control-group available_group">
